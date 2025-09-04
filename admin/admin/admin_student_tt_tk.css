@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Quay lại */
+.button a {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.button a:hover {
+  background: #444;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  color: #222;
+}
+
+/* Bảng */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background: #333;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+table tr:hover {
+  background: #e6f7ff;
+}
+
+/* Form tìm kiếm */
+form {
+  margin: 10px 0 20px;
+}
+
+form input[type="text"] {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 8px 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #444;
+}

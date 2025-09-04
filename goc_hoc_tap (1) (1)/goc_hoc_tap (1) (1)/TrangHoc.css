@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.top-banner {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  
+}
+
+.top-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grade-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.grade-card {
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  width: 260px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.grade-header {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 15px 10px;
+  line-height: 1.4;
+}
+
+.grade-header span {
+  font-size: 60px;
+  display: block;
+  font-weight: 600;
+}
+
+.grade-card ul {
+  list-style: none;
+  padding: 10px;
+  background-color: white;
+}
+
+.grade-card ul li {
+  padding: 10px;
+  font-weight: 500;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.grade-card ul li:hover {
+  background-color: #f0f0f0;
+}
+.icon {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px 0;
+}
+
+.icon:hover {
+  color: #007BFF;
+  text-decoration: underline;
+}
+.back-home {
+  display: inline-block;
+  margin: 30px auto;
+  margin-top:80px;
+  margin-left: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+.back-home:hover {
+  background: linear-gradient(45deg, #43e97b, #38f9d7);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+
+/* Màu từng lớp */
+.yellow .grade-header { background-color: #ffc107; }
+.blue   .grade-header { background-color: #2196f3; }
+.cyan   .grade-header { background-color: #00bcd4; }
+.green  .grade-header { background-color: #4caf50; }
+.purple .grade-header { background-color: #e91e63; }

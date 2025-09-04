@@ -1,0 +1,78 @@
+/* Reset cơ bản */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Nội dung chính */
+.main-content {
+    margin-left: 20px;
+    padding: 20px 20px 20px 0;
+  }
+  
+
+/* Header */
+header {
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+  border-left: 5px solid #2d89ef;
+  padding-left: 10px;
+}
+
+/* Cards container */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.card p {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Màu riêng cho từng card */
+.cards .card:nth-child(1) p {
+  color: #ff5722; /* Học sinh */
+}
+.cards .card:nth-child(2) p {
+  color: #4caf50; /* Giáo viên */
+}
+.cards .card:nth-child(3) p {
+  color: #2196f3; /* Phụ huynh */
+}

@@ -1,0 +1,83 @@
+[03-Sep-2025 22:33:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'toanhocd_hostweb'@'localhost' to database 'toanhoccd_login_ck' in /home/toanhocd/public_html/config/config.php:6
+Stack trace:
+#0 /home/toanhocd/public_html/config/config.php(6): mysqli->__construct()
+#1 /home/toanhocd/public_html/Giao_Dien_WEB/login.php(2): require('/home/toanhocd/...')
+#2 {main}
+  thrown in /home/toanhocd/public_html/config/config.php on line 6
+[03-Sep-2025 22:59:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php:2
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php(2): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php on line 2
+[03-Sep-2025 23:10:11 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php:2
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php(2): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php on line 2
+[03-Sep-2025 23:11:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php:2
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php(2): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/KQ_KT.php on line 2
+[03-Sep-2025 23:12:30 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:22:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:56 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[03-Sep-2025 23:23:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php:39
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php(39): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua.php on line 39
+[04-Sep-2025 00:12:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KetQua' doesn't exist in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua_GV.php:51
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua_GV.php(51): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/view_ketqua_GV.php on line 51
+[04-Sep-2025 09:36:18 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "id_ph" in /home/toanhocd/public_html/Giao_Dien_WEB/login_student.php on line 156
+[04-Sep-2025 10:27:44 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "id_ph" in /home/toanhocd/public_html/Giao_Dien_WEB/login_student.php on line 156

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi Toán học</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e6f7ff; /* Màu nền xanh da trời nhẹ nhàng */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        .problem-text {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #004080; /* Màu chữ xanh navy */
+            margin-bottom: 30px;
+        }
+        .answer-button {
+            background-color: #80c0ff; /* Màu nút xanh sáng */
+            color: #004080;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px #60a0e0; /* Hiệu ứng 3D nhẹ */
+        }
+        .answer-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px #60a0e0;
+        }
+        .answer-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px #60a0e0;
+        }
+        .score-board {
+            font-size: 1.5rem;
+            color: #008080; /* Màu chữ xanh teal */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .feedback-message {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 20px;
+            min-height: 40px;
+        }
+        .correct {
+            color: #22bb33; /* Màu xanh lá cây cho đáp án đúng */
+        }
+        .incorrect {
+            color: #ff4444; /* Màu đỏ cho đáp án sai */
+        }
+        .timer {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .game-over-container {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .game-over-text {
+            font-size: 3rem;
+            color: #dc2626;
+            font-weight: bold;
+        }
+        .final-score {
+            font-size: 2rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .play-again-button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold mb-6 text-blue-800">Trò chơi tính nhanh</h1>
+        <div class="score-board">
+            Điểm: <span id="score">0</span>
+        </div>
+        <div class="timer">
+            Thời gian: <span id="time">30</span>
+        </div>
+        <div id="problem" class="problem-text"></div>
+        <div id="answer-buttons" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+            <!-- Nút đáp án sẽ được thêm bằng JavaScript -->
+        </div>
+        <div id="feedback-message" class="feedback-message"></div>
+    </div>
+
+    <div id="game-over" class="game-over-container">
+        <div class="game-over-text">HẾT GIỜ!</div>
+        <div class="final-score">Điểm số của bạn: <span id="final-score-value">0</span></div>
+        <a href="../login_student.php" class="game-button">Quay về Trang Chính</a> 
+        <button id="play-again" class="play-again-button">Chơi lại</button>
+    </div>
+
+    <script>
+        // Lấy các phần tử HTML cần thiết
+        const problemEl = document.getElementById('problem');
+        const scoreEl = document.getElementById('score');
+        const answerButtonsEl = document.getElementById('answer-buttons');
+        const feedbackMessageEl = document.getElementById('feedback-message');
+        const timerEl = document.getElementById('time');
+        const gameOverEl = document.getElementById('game-over');
+        const finalScoreEl = document.getElementById('final-score-value');
+        const playAgainButton = document.getElementById('play-again');
+        const mainContainer = document.querySelector('.container');
+
+        // Khởi tạo các biến
+        let score = 0;
+        let correctAnswer = 0;
+        let timeLeft = 30;
+        let timerId;
+
+        // Hàm tạo số ngẫu nhiên trong khoảng [min, max]
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Hàm xáo trộn mảng
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Hàm tạo một bài toán mới
+        function generateProblem() {
+            // Reset feedback
+            feedbackMessageEl.textContent = '';
+
+            // Chọn ngẫu nhiên phép toán: 0 cho cộng, 1 cho trừ
+            const operation = getRandomNumber(0, 1);
+            let num1, num2;
+
+            if (operation === 0) {
+                // Phép cộng trong phạm vi 100
+                num1 = getRandomNumber(10, 80);
+                num2 = getRandomNumber(10, 80);
+                correctAnswer = num1 + num2;
+                problemEl.textContent = `${num1} + ${num2} = ?`;
+            } else {
+                // Phép trừ trong phạm vi 100
+                num1 = getRandomNumber(40, 99);
+                num2 = getRandomNumber(10, num1 - 10); // Đảm bảo kết quả dương
+                correctAnswer = num1 - num2;
+                problemEl.textContent = `${num1} - ${num2} = ?`;
+            }
+
+            // Tạo các đáp án (đúng và sai)
+            const answers = [correctAnswer];
+            while (answers.length < 3) {
+                let distractor;
+                // Tạo đáp án sai gần với đáp án đúng
+                const variation = getRandomNumber(-5, 5);
+                distractor = correctAnswer + variation;
+
+                // Đảm bảo đáp án sai không trùng với đáp án đúng và không trùng với các đáp án sai khác
+                if (!answers.includes(distractor) && distractor > 0) {
+                    answers.push(distractor);
+                }
+            }
+            
+            // Xáo trộn thứ tự các đáp án
+            shuffleArray(answers);
+
+            // Xóa các nút cũ và thêm các nút mới
+            answerButtonsEl.innerHTML = '';
+            answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.textContent = answer;
+                button.classList.add('answer-button');
+                button.setAttribute('data-answer', answer);
+                button.addEventListener('click', handleAnswerClick);
+                answerButtonsEl.appendChild(button);
+            });
+        }
+
+        // Hàm xử lý khi người dùng click vào nút đáp án
+        function handleAnswerClick(event) {
+            const selectedAnswer = parseInt(event.target.getAttribute('data-answer'));
+
+            // Vô hiệu hóa tất cả các nút để tránh click nhiều lần
+            Array.from(answerButtonsEl.children).forEach(button => {
+                button.disabled = true;
+            });
+
+            if (selectedAnswer === correctAnswer) {
+                score++;
+                scoreEl.textContent = score;
+                feedbackMessageEl.textContent = 'ĐÚNG RỒI! 🎉';
+                feedbackMessageEl.classList.remove('incorrect');
+                feedbackMessageEl.classList.add('correct');
+            } else {
+                feedbackMessageEl.textContent = 'SAI RỒI! �';
+                feedbackMessageEl.classList.remove('correct');
+                feedbackMessageEl.classList.add('incorrect');
+            }
+
+            // Tạo bài toán mới sau 1 giây
+            setTimeout(() => {
+                generateProblem();
+            }, 1000);
+        }
+
+        // Hàm khởi động bộ đếm thời gian
+        function startTimer() {
+            timeLeft = 30; // Đặt lại thời gian
+            timerEl.textContent = timeLeft;
+            timerId = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        // Hàm kết thúc trò chơi
+        function endGame() {
+            // Ẩn container chính và hiện màn hình kết thúc
+            mainContainer.style.display = 'none';
+            gameOverEl.style.display = 'block';
+            finalScoreEl.textContent = score;
+        }
+
+        // Hàm khởi động lại trò chơi
+        function resetGame() {
+            // Ẩn màn hình kết thúc và hiện container chính
+            gameOverEl.style.display = 'none';
+            mainContainer.style.display = 'block';
+            score = 0;
+            scoreEl.textContent = score;
+            startTimer();
+            generateProblem();
+        }
+
+        // Thêm sự kiện click cho nút "Chơi lại"
+        playAgainButton.addEventListener('click', resetGame);
+
+        // Bắt đầu trò chơi khi tải trang
+        resetGame();
+    </script>
+</body>
+</html>

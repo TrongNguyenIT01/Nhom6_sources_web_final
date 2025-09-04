@@ -1,0 +1,60 @@
+/* Container cho các card */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 ô hàng ngang */
+    gap: 20px; /* khoảng cách giữa các ô */
+    margin-top: 20px;
+  }
+  
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 180px;        /* cao hơn 1 chút cho cân */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+.card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+.card p {
+    font-size: 15px;
+    color: #666;
+    flex-grow: 1; /* để chữ giãn đều */
+}
+  
+.card button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+  
+.card button:hover {
+    background: #2980b9;
+}
+  
+/* Responsive: Nếu màn hình nhỏ thì tự xuống hàng */
+@media (max-width: 992px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+}

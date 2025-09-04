@@ -1,0 +1,174 @@
+/* styles.css */
+
+/* Font và background tổng thể */
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #a8dadc, #f1faee);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tiêu đề */
+h1 {
+    text-align: center;
+    color: #1d3557;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(241, 250, 238, 0.5);
+}
+
+/* Liên kết trên cùng */
+p a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #457b9d;
+    font-weight: 600;
+}
+p a:hover {
+    color: #1d3557;
+}
+
+/* Thông báo trạng thái */
+.success, .error {
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.success {
+    color: #0d6d0d;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}
+
+/* Table danh sách bài tập */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #f1faee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #a8dadc;
+    color: #1d3557;
+}
+table th {
+    background-color: #457b9d;
+    color: #fff;
+}
+table tr:last-child td {
+    border-bottom: none;
+}
+table tr:hover {
+    background-color: #e0f2f1;
+}
+
+/* Form làm bài tập */
+#exercise_form {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f1faee;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Câu hỏi */
+#exercise_form p {
+    border:2px solid black;
+    border-radius: 10px;
+    background-color: #a8dadc;
+    font-size: 1.2em;
+    color: #1d3557;
+    margin-bottom: 15px;
+}
+
+/* Input & button */
+input[type="text"], textarea, select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border: 2px solid #a8dadc;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #457b9d;
+    background-color: #f1faee;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #e63946;
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.3);
+}
+
+/* Radio multiple choice */
+input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Nút nộp bài */
+button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #fff;
+    background-color: #457b9d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(69, 123, 157, 0.4);
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #1d3557;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(29, 53, 87, 0.4);
+}
+
+/* Kéo thả */
+#sortable {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.draggable {
+    padding: 10px 15px;
+    background-color: #a8dadc;
+    border-radius: 8px;
+    cursor: grab;
+    color: #1d3557;
+    font-weight: 600;
+    user-select: none;
+}
+.draggable:active {
+    cursor: grabbing;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    table, #exercise_form {
+        width: 95%;
+    }
+}

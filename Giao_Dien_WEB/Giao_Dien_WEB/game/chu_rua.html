@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Cứu Rùa Con</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7e1a3; /* Màu nền cát */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+        .problem-text {
+            font-size: 1.5rem;
+            color: #004d40; /* Màu chữ xanh lá cây đậm */
+            margin-bottom: 20px;
+            min-height: 100px;
+            font-weight: bold;
+        }
+        .input-and-button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .input-field {
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #a8c0ff;
+            text-align: center;
+            font-size: 1.25rem;
+            width: 100%;
+            max-width: 200px;
+            margin-top: 10px;
+        }
+        .submit-button {
+            background-color: #4b83f0;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .submit-button:hover {
+            background-color: #3b6edc;
+        }
+        .feedback-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            min-height: 30px;
+        }
+        .correct {
+            color: #22bb33; /* Màu xanh lá cây cho đáp án đúng */
+        }
+        .incorrect {
+            color: #ff4444; /* Màu đỏ cho đáp án sai */
+        }
+        .game-status {
+            font-size: 1.2rem;
+            color: #008080;
+            margin-bottom: 20px;
+        }
+        .path {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            font-size: 4rem;
+        }
+        .turtle-emoji {
+            animation: move-turtle 2s forwards;
+        }
+        @keyframes move-turtle {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100px); /* Tùy chỉnh khoảng cách di chuyển */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold mb-6 text-blue-800">Giải Cứu Rùa Con</h1>
+        <div class="game-status">
+            Câu hỏi <span id="current-question">1</span> / <span id="total-questions"></span>
+        </div>
+        <div id="path" class="path">
+            <span id="turtle" style="opacity: 0;">🐢</span>
+            <span id="obstacle1" style="opacity: 1;">🪨</span>
+            <span id="obstacle2" style="opacity: 1;">🪵</span>
+            <span id="obstacle3" style="opacity: 1;">🏝️</span>
+            <span id="finish-line" style="opacity: 0;">🌊</span>
+        </div>
+        <div id="problem" class="problem-text"></div>
+        <div class="input-and-button-container">
+            <input type="number" id="answer-input" class="input-field" placeholder="Nhập đáp án...">
+            <button id="submit-button" class="submit-button">Giải bài toán</button>
+        </div>
+        <div id="feedback-message" class="feedback-message"></div>
+        <a href="../login_student.php" class="game-button">Quay về Trang Chính</a>
+    </div>
+
+    <script>
+        // Lấy các phần tử HTML cần thiết
+        const problemEl = document.getElementById('problem');
+        const answerInput = document.getElementById('answer-input');
+        const submitButton = document.getElementById('submit-button');
+        const feedbackMessageEl = document.getElementById('feedback-message');
+        const currentQuestionEl = document.getElementById('current-question');
+        const totalQuestionsEl = document.getElementById('total-questions');
+        const turtleEl = document.getElementById('turtle');
+        const obstacles = [
+            document.getElementById('obstacle1'),
+            document.getElementById('obstacle2'),
+            document.getElementById('obstacle3')
+        ];
+        const finishLine = document.getElementById('finish-line');
+        const container = document.querySelector('.container');
+
+        let wordProblems = [];
+        let currentProblemIndex = 0;
+
+        // Hàm tạo một bài toán đố ngẫu nhiên
+        function createRandomProblem() {
+            const operation = Math.floor(Math.random() * 4); // 0: +, 1: -, 2: x, 3: /
+            let text = "";
+            let answer = 0;
+            let num1, num2, num3;
+
+            switch(operation) {
+                case 0: // Phép cộng
+                    num1 = Math.floor(Math.random() * 50) + 10;
+                    num2 = Math.floor(Math.random() * 50) + 10;
+                    answer = num1 + num2;
+                    text = `Trong một khu vườn có ${num1} bông hoa hồng và ${num2} bông hoa cúc. Hỏi khu vườn đó có tất cả bao nhiêu bông hoa?`;
+                    break;
+                case 1: // Phép trừ
+                    num1 = Math.floor(Math.random() * 100) + 50;
+                    num2 = Math.floor(Math.random() * (num1 - 20)) + 10;
+                    answer = num1 - num2;
+                    text = `Một đàn bướm có ${num1} con. Sau đó, ${num2} con bướm bay đi. Hỏi còn lại bao nhiêu con bướm?`;
+                    break;
+                case 2: // Phép nhân
+                    num1 = Math.floor(Math.random() * 8) + 2;
+                    num2 = Math.floor(Math.random() * 8) + 2;
+                    answer = num1 * num2;
+                    text = `Mỗi giỏ có ${num1} quả táo. Có ${num2} giỏ như vậy. Hỏi có tất cả bao nhiêu quả táo?`;
+                    break;
+                case 3: // Phép chia
+                    num2 = Math.floor(Math.random() * 5) + 2;
+                    answer = Math.floor(Math.random() * 8) + 2;
+                    num1 = answer * num2;
+                    text = `Có ${num1} viên kẹo được chia đều cho ${num2} bạn. Hỏi mỗi bạn nhận được bao nhiêu viên kẹo?`;
+                    break;
+            }
+            return { text: text, answer: answer };
+        }
+
+        // Hàm tạo một bộ bài toán mới
+        function generateNewProblems() {
+            wordProblems = [];
+            for (let i = 0; i < 4; i++) {
+                wordProblems.push(createRandomProblem());
+            }
+            totalQuestionsEl.textContent = wordProblems.length;
+        }
+
+        // Hàm hiển thị bài toán mới
+        function displayProblem() {
+            if (currentProblemIndex < wordProblems.length) {
+                const problem = wordProblems[currentProblemIndex];
+                problemEl.textContent = problem.text;
+                currentQuestionEl.textContent = currentProblemIndex + 1;
+                answerInput.value = '';
+                feedbackMessageEl.textContent = '';
+                submitButton.disabled = false;
+                answerInput.disabled = false;
+            } else {
+                endGame();
+            }
+        }
+
+        // Hàm xử lý khi người dùng click vào nút "Giải bài toán"
+        function handleSubmit() {
+            const userAnswer = parseInt(answerInput.value);
+            const problem = wordProblems[currentProblemIndex];
+
+            submitButton.disabled = true;
+            answerInput.disabled = true;
+
+            if (userAnswer === problem.answer) {
+                feedbackMessageEl.textContent = 'ĐÚNG RỒI! 🎉';
+                feedbackMessageEl.classList.remove('incorrect');
+                feedbackMessageEl.classList.add('correct');
+                
+                // Ẩn chướng ngại vật
+                if (currentProblemIndex < obstacles.length) {
+                    obstacles[currentProblemIndex].style.opacity = '0';
+                }
+
+                currentProblemIndex++;
+                
+                // Di chuyển rùa
+                if (currentProblemIndex === 1) {
+                    turtleEl.style.opacity = '1';
+                }
+                if (currentProblemIndex <= obstacles.length) {
+                    // Cập nhật vị trí rùa
+                    turtleEl.style.transform = `translateX(${currentProblemIndex * 100}px)`;
+                }
+                
+                setTimeout(() => {
+                    displayProblem();
+                }, 1500);
+
+            } else {
+                feedbackMessageEl.textContent = 'SAI RỒI! Hãy thử lại 😢';
+                feedbackMessageEl.classList.remove('correct');
+                feedbackMessageEl.classList.add('incorrect');
+                submitButton.disabled = false;
+                answerInput.disabled = false;
+            }
+        }
+
+        // Hàm kết thúc trò chơi
+        function endGame() {
+            problemEl.textContent = 'Chúc mừng các em đã giải cứu được rùa con!';
+            answerInput.style.display = 'none';
+            submitButton.style.display = 'none';
+            feedbackMessageEl.textContent = '';
+            finishLine.style.opacity = '1';
+            turtleEl.style.transform = 'translateX(300px)'; // Di chuyển rùa đến cuối cùng
+
+            const playAgainButton = document.createElement('button');
+            playAgainButton.textContent = 'Chơi lại';
+            playAgainButton.classList.add('play-again-button');
+            playAgainButton.style.marginTop = '20px';
+            playAgainButton.onclick = resetGame;
+            container.appendChild(playAgainButton);
+        }
+
+        // Hàm khởi động lại trò chơi
+        function resetGame() {
+            currentProblemIndex = 0;
+            answerInput.style.display = 'block';
+            submitButton.style.display = 'block';
+            turtleEl.style.opacity = '0';
+            turtleEl.style.transform = 'translateX(0px)';
+            obstacles.forEach(obs => obs.style.opacity = '1');
+            finishLine.style.opacity = '0';
+            const oldPlayAgainButton = container.querySelector('.play-again-button');
+            if (oldPlayAgainButton) {
+                oldPlayAgainButton.remove();
+            }
+            generateNewProblems(); // Tạo bộ câu hỏi mới
+            displayProblem();
+        }
+
+        // Cài đặt ban đầu
+        submitButton.addEventListener('click', handleSubmit);
+        answerInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleSubmit();
+            }
+        });
+        resetGame(); // Khởi động trò chơi lần đầu
+    </script>
+</body>
+</html>

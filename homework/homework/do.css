@@ -1,0 +1,165 @@
+/*  Nền & bố cục chung  */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #d0f4de, #a9def9);
+    min-height: 100vh;
+}
+
+/*  Tiêu đề  */
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.exercise-box {
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 85%;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/*  Bảng danh sách bài tập  */
+table {
+    border-collapse: collapse;
+    border: black;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+table th {
+    background: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #e8f5e9;
+}
+
+/*  Bài tập cụ thể  */
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+/*  Form làm bài  */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* canh trái đáp án */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Radio + label cùng hàng */
+form label {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+    gap: 6px; /* khoảng cách giữa tick và chữ */
+}
+
+input[type="radio"] {
+    margin: 0;
+    transform: scale(1.2); /* tick to hơn 1 chút */
+}
+
+input[type="text"] {
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/*  Nút nộp bài  */
+button {
+    display: block;
+    margin: 20px auto; 
+    background: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/*  Kéo thả  */
+#sortable {
+    min-height: 90px;
+    border: 2px dashed #555;
+    border-radius: 8px;
+    background: #fafafa;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.draggable {
+    background: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: grab;
+    font-weight: bold;
+    user-select: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.draggable:active {
+    background: #ccc;
+    transform: scale(1.05);
+    cursor: grabbing;
+}
+
+/* Khi kéo item vào vùng */
+#sortable.dragover {
+    background: #e8f5e9;
+    border-color: #4CAF50;
+}

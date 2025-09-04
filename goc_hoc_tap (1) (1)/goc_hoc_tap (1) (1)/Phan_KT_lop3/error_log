@@ -1,0 +1,5 @@
+[04-Sep-2025 08:05:59 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'toanhocd_upload.KQ_KT' doesn't exist in /home/toanhocd/public_html/goc_hoc_tap (1) (1)/Phan_KT_lop3/ketqua_lop3.php:38
+Stack trace:
+#0 /home/toanhocd/public_html/goc_hoc_tap (1) (1)/Phan_KT_lop3/ketqua_lop3.php(38): mysqli->prepare()
+#1 {main}
+  thrown in /home/toanhocd/public_html/goc_hoc_tap (1) (1)/Phan_KT_lop3/ketqua_lop3.php on line 38

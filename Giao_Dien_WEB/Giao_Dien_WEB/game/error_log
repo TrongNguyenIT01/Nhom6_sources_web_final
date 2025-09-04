@@ -1,0 +1,91 @@
+[03-Sep-2025 23:34:04 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 00:35:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 00:47:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 00:50:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 00:54:32 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php:3
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php(3): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 3
+[04-Sep-2025 08:36:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php:3
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php(3): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 3
+[04-Sep-2025 08:47:12 Asia/Ho_Chi_Minh] PHP Parse error:  Unmatched '}' in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 19
+[04-Sep-2025 08:48:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'image' doesn't have a default value in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php:13
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 13
+[04-Sep-2025 08:50:58 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "question" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 4
+[04-Sep-2025 08:50:58 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option1" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 5
+[04-Sep-2025 08:50:58 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option2" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 6
+[04-Sep-2025 08:50:58 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option3" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 7
+[04-Sep-2025 08:50:58 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "answer" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 8
+[04-Sep-2025 08:51:05 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "question" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 4
+[04-Sep-2025 08:51:05 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option1" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 5
+[04-Sep-2025 08:51:05 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option2" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 6
+[04-Sep-2025 08:51:05 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option3" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 7
+[04-Sep-2025 08:51:05 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "answer" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 8
+[04-Sep-2025 08:52:00 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "question" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 4
+[04-Sep-2025 08:52:00 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option1" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 5
+[04-Sep-2025 08:52:00 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option2" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 6
+[04-Sep-2025 08:52:00 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option3" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 7
+[04-Sep-2025 08:52:00 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "answer" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 8
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "question" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 4
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option1" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 5
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option2" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 6
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option3" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 7
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "answer" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 8
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "question" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 4
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option1" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 5
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option2" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 6
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option3" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 7
+[04-Sep-2025 08:54:17 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "answer" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 8
+[04-Sep-2025 08:54:28 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "question" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 4
+[04-Sep-2025 08:54:28 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option1" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 5
+[04-Sep-2025 08:54:28 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option2" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 6
+[04-Sep-2025 08:54:28 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "option3" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 7
+[04-Sep-2025 08:54:28 Asia/Ho_Chi_Minh] PHP Warning:  Undefined array key "answer" in /home/toanhocd/public_html/Giao_Dien_WEB/game/them_cau_hoi.php on line 8
+[04-Sep-2025 08:58:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 08:58:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 08:58:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 08:59:02 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7
+[04-Sep-2025 09:05:24 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php:7
+Stack trace:
+#0 /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/toanhocd/public_html/Giao_Dien_WEB/game/game_keo_tha_layCH.php on line 7

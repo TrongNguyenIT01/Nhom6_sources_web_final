@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #d0f4de, #a9def9);
+  color: #333;
+}
+.icon a{
+  color: black;
+  text-decoration: none;
+}
+.icon a:hover{
+  color: white;
+}
+
+.topbar {   
+  background-color: #ffb74d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  color: darkred;
+  font-weight: bold;
+}
+
+.toolbar {
+  background-color: #4fc3f7;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.right-icons {
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.toolbar .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.toolbar-items span {
+  margin: 0 10px;
+}
+
+.banner {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #d0f4de, #a9def9);
+  color: #333;
+}
+
+.banner h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.banner h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.highlight {
+  color: #ff3d00;
+  font-weight: bold;
+}
+
+.cta {
+  background-color: #43a047;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background-color: #388e3c;
+}
+
+.teachers {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px auto;
+  overflow-x: auto;
+  padding: 20px;
+  max-width: 100%;
+}
+
+.teacher-card {
+  min-width: 200px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  animation: float 3s ease-in-out infinite;
+  transition: box-shadow 0.3s ease;
+}
+
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #4fc3f7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.teacher-name {
+  color: #2E3A59;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.teacher-id {
+  color: #777;
+  font-size: 14px;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.footer {
+  background-color: white;
+  padding: 40px 20px 0;
+  font-size: 14px;
+  color: #333;
+  border-top: 1px solid #eee;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+}
+
+.footer-section h3 {
+  color: #005c99;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #ff5200;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+  
+  .footer-section p {
+    margin: 6px 0;
+    line-height: 1.5;
+  }
+
+  .social-icons img {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  /* Sidebar cho thông tin học sinh */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .sidebar.active {
+    right: 0;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sidebar-header h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .sidebar-content {
+    margin-top: 20px;
+  }
+  
+  .logout-btn {
+    background-color: #4fc3f7;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+

@@ -1,0 +1,79 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8ff;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Highlight title */
+h1.highlight {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Slider of location cards */
+.location-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Location card style */
+.location-card {
+  text-decoration: none;
+  width: 240px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Ảnh trong thẻ */
+.location-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tiêu đề bài học */
+.location-card h2 {
+  font-size: 16px;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Link quay lại */
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

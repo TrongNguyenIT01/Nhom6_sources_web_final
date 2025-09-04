@@ -1,0 +1,20 @@
+[04-Sep-2025 09:35:07 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'H.ID_PH' in 'SELECT' in /home/toanhocd/public_html/config/dang_nhap_HS.php:16
+Stack trace:
+#0 /home/toanhocd/public_html/config/dang_nhap_HS.php(16): mysqli_query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/config/dang_nhap_HS.php on line 16
+[04-Sep-2025 09:37:04 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Column count doesn't match value count at row 1 in /home/toanhocd/public_html/config/dang_ky_HS.php:103
+Stack trace:
+#0 /home/toanhocd/public_html/config/dang_ky_HS.php(103): mysqli_query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/config/dang_ky_HS.php on line 103
+[04-Sep-2025 09:44:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`toanhocd_upload`.`hocsinh`, CONSTRAINT `hocsinh_ibfk_4` FOREIGN KEY (`ID_PH`) REFERENCES `phuhuynh` (`ID_PH`)) in /home/toanhocd/public_html/config/dang_ky_HS.php:103
+Stack trace:
+#0 /home/toanhocd/public_html/config/dang_ky_HS.php(103): mysqli_query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/config/dang_ky_HS.php on line 103
+[04-Sep-2025 09:54:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`toanhocd_upload`.`hocsinh`, CONSTRAINT `hocsinh_ibfk_4` FOREIGN KEY (`ID_PH`) REFERENCES `phuhuynh` (`ID_PH`)) in /home/toanhocd/public_html/config/dang_ky_HS.php:102
+Stack trace:
+#0 /home/toanhocd/public_html/config/dang_ky_HS.php(102): mysqli_query()
+#1 {main}
+  thrown in /home/toanhocd/public_html/config/dang_ky_HS.php on line 102

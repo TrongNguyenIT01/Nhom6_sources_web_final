@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #d0f4de, #a9def9);
+  }
+  
+  .topbar {
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .icon {
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .content {
+    padding: 30px;
+  }
+  
+  .section {
+    background: #ffffffcc;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* ===== SIDEBAR DÙNG CHUNG CHO GIÁO VIÊN ===== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .sidebar.show {
+    right: 0;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .sidebar-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #0077b6;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .sidebar p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .sidebar p strong {
+    color: #0077b6;
+  }
+  
+  .logout-btn {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d32f2f;
+  }
+  

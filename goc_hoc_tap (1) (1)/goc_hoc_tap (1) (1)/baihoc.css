@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f4fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.highlight {
+  color: #7b2cbf;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #5a189a;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.back-link:hover {
+  color: #9d4edd;
+}
+
+/* Slider (cuộn ngang) */
+.location-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #9d4edd #f5f4fa;
+}
+
+.location-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.location-slider::-webkit-scrollbar-thumb {
+  background-color: #9d4edd;
+  border-radius: 10px;
+}
+
+.location-slider::-webkit-scrollbar-track {
+  background: #e9ddff;
+  border-radius: 10px;
+}
+
+/* Thẻ địa điểm */
+.location-card {
+  flex: 0 0 280px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.location-card:hover {
+  transform: scale(1.03);
+}
+.location-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 160px;
+  object-fit: cover;
+}
+.location-card h2 {
+  color: #7b2cbf;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+.location-card {
+  text-decoration: none;
+}
+
+.location-card h2 {
+  text-decoration: none;
+}
+
+.location-card:link,
+.location-card:visited,
+.location-card:hover,
+.location-card:active {
+  text-decoration: none;
+  color: inherit;
+}
+
