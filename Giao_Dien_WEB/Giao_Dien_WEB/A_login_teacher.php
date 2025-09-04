@@ -32,11 +32,12 @@
                     </div>
                     <div class="Remenber-forget">
                         <label for=""><input type="checkbox">Nhớ mật khẩu</label>
-                        <a href="A_forget.html">Quên mật khẩu?</a>
+                        <a href="A_forget.php">Quên mật khẩu?</a>
                     </div>
                     <button type="submit" class="btn" name="submit">Đăng nhập</button>    
                 </div>
             </form>
         </div>
     </body>
+
 </html>
